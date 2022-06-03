@@ -7,10 +7,10 @@ import java.util.Scanner;
 
 public class Client {
     public static void main(String[] args){
-        final Socket clientSocket; // socket used by client to send and recieve data from server
-        final BufferedReader in;   // object to read data from socket
-        final PrintWriter out;     // object to write data into socket
-        final Scanner sc = new Scanner(System.in); // object to read data from user's keyboard
+        final Socket clientSocket;
+        final BufferedReader in;
+        final PrintWriter out;
+        final Scanner sc = new Scanner(System.in);
         try {
             clientSocket = new Socket("127.0.0.1",5000);
             out = new PrintWriter(clientSocket.getOutputStream());
