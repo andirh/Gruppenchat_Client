@@ -36,7 +36,7 @@ public class Client {
                     try {
                         msg = in.readLine();
                         while(msg!=null){
-                            System.out.println("Server: "+msg);
+                            System.out.println(msg);
                             msg = in.readLine();
                         }
                         System.out.println("Server does not serve anymore");
