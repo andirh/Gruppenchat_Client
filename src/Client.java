@@ -6,13 +6,17 @@ import java.net.Socket;
 import java.util.Scanner;
 
 public class Client {
+
+    private static final String IP_ADDRESS = "127.0.0.1";
+    private static final int PORT = 5000;
+
     public static void main(String[] args){
         final Socket clientSocket;
         final BufferedReader in;
         final PrintWriter out;
         final Scanner sc = new Scanner(System.in);
         try {
-            clientSocket = new Socket("127.0.0.1",5000);
+            clientSocket = new Socket(IP_ADDRESS,PORT);
             out = new PrintWriter(clientSocket.getOutputStream());
             in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
             Thread sender = new Thread(new Runnable() {
