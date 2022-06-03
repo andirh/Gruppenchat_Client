@@ -27,6 +27,8 @@ public class Client {
                 }
             });
             sender.start();
+
+
             Thread receiver = new Thread(new Runnable() {
                 String msg;
                 @Override
@@ -34,10 +36,10 @@ public class Client {
                     try {
                         msg = in.readLine();
                         while(msg!=null){
-                            System.out.println("Server : "+msg);
+                            System.out.println("Server: "+msg);
                             msg = in.readLine();
                         }
-                        System.out.println("Server out of service");
+                        System.out.println("Server does not serve anymore");
                         out.close();
                         clientSocket.close();
                     } catch (IOException e) {
